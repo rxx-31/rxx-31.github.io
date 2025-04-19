@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uppereastside.abt</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #3d3d29;
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e7bf9e, #2c3e50);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* About Content */
+        .about-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .about-content h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .about-feature {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #3d3d29;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #3d3d29;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #3d3d29;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }                                      
+        
+        .footer-column a:hover {
+            color: #3498db;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;              
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">upper east side</div>
+                <ul class="nav-links">
+                    <li><a href="home.html">home</a></li>
+                    <li><a href="gallery.html">gallery</a></li>
+                    <li><a href="registration.html">registration</a></li>
+                    <li><a href="inquiry.html">inquiry</a></li>
+                    <li><a href="about.html">about us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>about</h1>
+            <p>A cozy corner for handcrafted coffee, warm conversations, and delicious bites.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <div class="container">
+        <div class="about-content">
+            <h2>background</h2>
+            <p>Founded in 2022, upper east side began as a simple idea: create a space where quality coffee meets genuine community. What started as a passion project quickly evolved into the welcoming coffee shop you know today.</p>
+            <p>Our journey began when a group of friends with a shared love for exceptional coffee decided to bring something special to the neighborhood. We believed that coffee should be more than just a morning ritual—it should be an experience that brings people together.</p>
+            <p>Today, upper east side stands as a testament to that vision. We've created a space where friends meet, ideas flow, and every cup tells a story.</p>
+            
+            <div class="about-features">
+                <div class="about-feature">
+                    <h3>our coffee</h3>
+                    <p>We source only the finest beans from ethical suppliers around the world. Each batch is carefully selected and roasted to perfection to bring out unique flavor profiles that delight the senses.</p>
+                </div>
+                <div class="about-feature">
+                    <h3>our space</h3>
+                    <p>Designed with comfort in mind, our café offers a warm atmosphere where you can work, chat, or simply unwind. Local artwork adorns our walls, and each corner invites you to stay a little longer.</p>
+                </div>
+                <div class="about-feature">
+                    <h3>our community</h3>
+                    <p>More than just serving coffee, we're committed to building relationships. We regularly host events, workshops, and gatherings that bring people together and strengthen our community ties.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: 40px 0 20px; color: #2c3e50;">our journey</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2022</h3>
+                    <p>Upper east side opens its doors with a small menu and big dreams.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>We expanded our menu to include artisanal pastries and launched our first seasonal coffee blend.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2024</h3>
+                    <p>Began our direct trade partnership with coffee farmers in Colombia and Ethiopia.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2025</h3>
+                    <p>Celebrating our growth with a renewed commitment to quality and community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>upper east side</h3>
+                    <p>Welcome to upper east side – your cozy corner for handcrafted coffee, warm conversations, and delicious bites. At upper east side, we serve ethically sourced, expertly brewed coffee alongside fresh pastries and light meals in a relaxed, inviting space.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>quick links</h3>
+                    <ul>
+                        <li><a href="home.html">home</a></li>
+                        <li><a href="gallery.html">gallery</a></li>
+                        <li><a href="registration.html">registration</a></li>
+                        <li><a href="inquiry.html">inquiry</a></li>
+                        <li><a href="about.html">about us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>contact us</h3>
+                    <ul>
+                        <li>Email: uppereastside@gmail.com</li>
+                        <li>Phone: (434) 231-7532</li>
+                        <li>Address: 574 Block 13, Makati City, Philippines</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 upper east side. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
